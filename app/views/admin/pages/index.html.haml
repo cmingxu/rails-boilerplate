@@ -1,2 +1,10 @@
-%h1 Admin::Pages#index
-%p Find me in app/views/admin/pages/index.html.haml
+%table.table.table-bordered
+  %thead
+    %tr
+      %td Slug
+
+  %tbody
+    - @pages.each do |p|
+      %tr
+        %td= link_to p.slug, edit_admin_page_path(p)
+

@@ -74,6 +74,8 @@ GEM
       railties (~> 3.1)
       warden (~> 1.2.1)
     diff-lcs (1.2.4)
+    disqus (1.0.4)
+      json
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (1.4.0)
@@ -214,6 +216,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   compass-rails
   devise
+  disqus
   font-awesome-rails
   haml-rails
   jquery-rails

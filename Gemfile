@@ -37,3 +37,4 @@ group :development, :test do
 end
 
 gem 'thin'
+gem 'disqus'
