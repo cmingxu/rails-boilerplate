@@ -34,6 +34,8 @@ GEM
     better_errors (0.8.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    bootstrap-sass (2.3.2.0)
+      sass (~> 3.2)
     bootstrap-wysihtml5-rails (0.3.1.20)
       railties (>= 3.0)
     bourne (1.4.0)
@@ -198,6 +200,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   better_errors
+  bootstrap-sass
   bootstrap-wysihtml5-rails
   cancan
   capistrano

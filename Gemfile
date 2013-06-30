@@ -10,12 +10,13 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'compass-rails'
   gem 'uglifier', '>= 1.0.3'
-  gem "twitter-bootstrap-rails"
+  gem 'twitter-bootstrap-rails'
   gem 'font-awesome-rails'
   gem 'bootstrap-wysihtml5-rails'
+  gem 'bootstrap-sass'
 end
 
-gem "haml-rails"
+gem 'haml-rails'
 gem 'jquery-rails'
 gem 'capistrano'
 gem 'devise'
