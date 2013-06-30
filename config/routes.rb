@@ -1,4 +1,14 @@
 Boilerplate::Application.routes.draw do
+  get "users/new"
+
+  get "users/index"
+
+  get "users/show"
+
+  get "users/edit"
+
+  devise_for :users
+
   get "welcome/index"
 
   get "welcome/dashboard"
