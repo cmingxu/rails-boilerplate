@@ -1,19 +1,19 @@
 Boilerplate::Application.routes.draw do
-  get "users/new"
 
-  get "users/index"
-
-  get "users/show"
-
-  get "users/edit"
+  namespace :admin do
+    resources :users
+    resources :pages
+  end
 
   devise_for :users
 
   get "welcome/index"
-
   get "welcome/dashboard"
 
   resources :foos
+
+  match "about" => "welcome#about"
+  match "team" => "welcome#team"
 
 
   # The priority is based upon order of creation:

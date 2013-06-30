@@ -14,6 +14,7 @@ group :assets do
   gem 'font-awesome-rails'
   gem 'bootstrap-wysihtml5-rails'
   gem 'bootstrap-sass'
+  gem 'rails_kindeditor'
 end
 
 gem 'haml-rails'
