@@ -1,0 +1,19 @@
+= form_for @counter do |f|
+  - if @counter.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@counter.errors.count, "error")} prohibited this counter from being saved:"
+      %ul
+        - @counter.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :start_at
+    = f.datetime_select :start_at
+  .field
+    = f.label :end_at
+    = f.datetime_select :end_at
+  .field
+    = f.label :times
+    = f.number_field :times
+  .actions
+    = f.submit 'Save'

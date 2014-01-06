@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 set :stages, %w(production staging qa)
 set :default_stage, ENV['env'] || "production"
 require 'capistrano/ext/multistage'

@@ -1,11 +1,31 @@
+# -*- encoding : utf-8 -*-
+require 'digest'
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  before_save :secure_password, :on => :create
+  attr_accessor :password
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-  # attr_accessible :title, :body
+  validate :password_valid
+
+  def password_valid
+    self.errors.add(:password, "密码不能空") if self.password.blank?
+  end
+
+  def secure_password
+    self.salt = SecureRandom.hex(10)
+    self.encrypted_password = encryption_password(self.password)
+  end
+
+  def self.authenticate(u, p)
+    user = User.find_by_login(u)
+    user.password_valid?(p) ? user : nil
+  end
+
+
+  def password_valid?(password)
+    encryption_password(password) == self.encrypted_password
+  end
+
+  def encryption_password(password)
+    Digest::MD5.hexdigest self.salt + "shutaidong" + password
+  end
 end

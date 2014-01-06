@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Boilerplate::Application.routes.draw do
 
   namespace :admin do
@@ -5,7 +6,15 @@ Boilerplate::Application.routes.draw do
     resources :pages
   end
 
-  devise_for :users
+  namespace :api do
+    resources :counters, :only => [:index, :create]
+    resources :users do
+      collection do
+        post :register
+        post :login
+      end
+    end
+  end
 
   get "welcome/index"
   get "welcome/dashboard"

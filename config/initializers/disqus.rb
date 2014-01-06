@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Disqus::defaults[:api_key]         = ""
 Disqus::defaults[:account]         = "xuchunming" # your disqus account
 Disqus::defaults[:developer]       = Rails.env.development? # allows threads to work on localhost

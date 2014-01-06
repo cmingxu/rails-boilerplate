@@ -20,7 +20,6 @@ end
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'capistrano'
-gem 'devise'
 gem 'carrierwave'
 gem 'cancan'
 gem 'whenever'

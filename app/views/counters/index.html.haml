@@ -1,0 +1,23 @@
+%h1 Listing counters
+
+%table
+  %tr
+    %th Start at
+    %th End at
+    %th Times
+    %th
+    %th
+    %th
+
+  - @counters.each do |counter|
+    %tr
+      %td= counter.start_at
+      %td= counter.end_at
+      %td= counter.times
+      %td= link_to 'Show', counter
+      %td= link_to 'Edit', edit_counter_path(counter)
+      %td= link_to 'Destroy', counter, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Counter', new_counter_path

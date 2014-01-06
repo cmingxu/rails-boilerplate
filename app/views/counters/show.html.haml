@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Start at:
+  = @counter.start_at
+%p
+  %b End at:
+  = @counter.end_at
+%p
+  %b Times:
+  = @counter.times
+
+= link_to 'Edit', edit_counter_path(@counter)
+\|
+= link_to 'Back', counters_path
